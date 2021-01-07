@@ -1,6 +1,6 @@
 import React, { useRef, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { addTodo, removeTodo, toggleTodo } from './store/actions/todos';
+import { AsyncAddTodo, removeTodo, toggleTodo } from './store/actions/todos';
 
 const TodoList = () => {
   const inputRef = useRef();
@@ -13,7 +13,7 @@ const TodoList = () => {
     (e) => {
       e.preventDefault();
 
-      dispatch(addTodo(inputRef.current.value));
+      dispatch(AsyncAddTodo(inputRef.current.value));
 
       inputRef.current.value = '';
     },

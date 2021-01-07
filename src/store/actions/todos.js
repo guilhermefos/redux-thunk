@@ -5,6 +5,12 @@ export const addTodo = (text) => ({
   }
 });
 
+export const AsyncAddTodo = (text) => (dispatch) => {
+  setTimeout(() => {
+    dispatch(addTodo(text));
+  }, 3000);
+};
+
 export const toggleTodo = (id) => ({
   type: 'TOGGLE_TODO',
   payload: {
